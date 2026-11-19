@@ -1,0 +1,54 @@
+{
+  "name": "مفكرتي اليومية — ياسر الحسين",
+  "short_name": "مفكرتي",
+  "description": "مفكرة عربية لتسجيل أيام العمل والدفعات بالصوت أو الكتابة، تعمل بلا إنترنت.",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f9f4ec",
+  "theme_color": "#1e8449",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "categories": ["productivity", "business", "finance"],
+  "shortcuts": [
+    {
+      "name": "اليوم",
+      "short_name": "اليوم",
+      "url": "./index.html#today",
+      "description": "تسجيل سريع لليوم"
+    },
+    {
+      "name": "التقويم",
+      "short_name": "التقويم",
+      "url": "./index.html#calendar",
+      "description": "عرض التقويم"
+    }
+  ]
+}
