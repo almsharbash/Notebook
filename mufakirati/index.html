@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>مفكرتي اليومية — ياسر الحسين</title>
+<link rel="manifest" href="manifest.webmanifest">
+<script src="firebase-config.js"></script>
+<meta name="theme-color" content="#1e8449">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="مفكرتي">
+<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f9f4ec;--card:#fdfbf7;--ink:#2a1d16;--mute:#7a6a5e;--line:#e2d8ca;--g:#1e8449;--r:#d32f2f;--y:#b07300;--gray:#8a919a;--p:#5b3fa0;--wa:#25d366;--b:#1565c0}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1c1713;--card:#251f19;--ink:#f1e8dc;--mute:#b3a493;--line:#3b322a}}
+:root[data-theme="dark"]{--bg:#1c1713;--card:#251f19;--ink:#f1e8dc;--mute:#b3a493;--line:#3b322a}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Amiri',Tahoma,serif;font-size:18px;padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom)}
+.wrap{max-width:600px;margin:0 auto;padding:0 16px 90px}
+
+/* ==== الترويسة ==== */
+.topbar{text-align:center;padding:18px 16px 14px;background:linear-gradient(135deg,var(--g),#0f5c2e);color:#fff;border-radius:0 0 26px 26px;margin:0 -16px 14px}
+.topbar h1{font-family:'Aref Ruqaa','Amiri',serif;font-size:30px;margin:0 0 6px}
+.topbar .who{font-size:14px;opacity:.95;display:flex;flex-direction:column;gap:3px;align-items:center}
+.topbar .who a{color:#ffe9a8;text-decoration:none;direction:ltr;font-size:13px}
+.st{font-size:13px;color:var(--mute);display:flex;gap:6px;align-items:center;justify-content:center;margin:6px 0 12px}
+.dot{width:10px;height:10px;border-radius:50%;background:var(--g)}
+.off .dot{background:var(--r)}
+
+/* ==== زر التثبيت ==== */
+.install{display:none;width:100%;border:0;border-radius:18px;background:linear-gradient(135deg,#1e8449,#0f5c2e);color:#fff;font:inherit;font-weight:700;font-size:19px;padding:16px;cursor:pointer;margin-bottom:14px;box-shadow:0 4px 0 rgba(0,0,0,.2);gap:10px;align-items:center;justify-content:center;flex-direction:row}
+.install:active{transform:translateY(2px)}
+.install.show{display:flex}
+
+/* ==== القوائم العمودية ==== */
+.menu{display:flex;flex-direction:column;gap:10px;margin-bottom:16px}
+.mi{display:flex;align-items:center;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:16px 18px;cursor:pointer;font:inherit;font-size:19px;font-weight:700;color:var(--ink);text-align:right;transition:.15s;width:100%}
+.mi:hover{transform:translateX(-3px);border-color:var(--g)}
+.mi:active{transform:scale(.99)}
+.mi i{font-style:normal;font-size:30px;width:38px;text-align:center}
+.mi .arr{margin-inline-start:auto;color:var(--mute);font-size:22px}
+.mi.wa{border-color:var(--wa);background:#e8f9ee;color:#0f5c2e}
+:root[data-theme="dark"] .mi.wa{background:#0f2a1c;color:#a8e8c0}
+
+/* ==== الصفحات ==== */
+.pg{display:none}.pg.a{display:block}
+.back{background:none;border:1px solid var(--line);border-radius:12px;padding:6px 14px;font:inherit;color:var(--mute);cursor:pointer;margin-bottom:12px;font-size:15px}
+h2{font-family:'Aref Ruqaa','Amiri',serif;font-size:26px;margin:0 0 12px}
+
+/* ==== الإحصائيات ==== */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px}
+.s{color:#fff;border-radius:22px;padding:12px 4px;text-align:center;min-height:112px;display:flex;flex-direction:column;justify-content:center}
+.s b{font-size:34px;line-height:1.1}.s span{font-size:14px}.s small{font-size:13px;opacity:.9}
+.s.g{background:var(--g)}.s.r{background:var(--r)}.s.y{background:var(--y)}.s.b{background:var(--b)}.s.p{background:var(--p)}
+
+/* ==== الأزرار الكبيرة ==== */
+.big{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:10px}
+.bb{border:0;border-radius:26px;color:#fff;padding:18px 4px;font:inherit;font-weight:700;font-size:18px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px;box-shadow:0 3px 0 rgba(0,0,0,.2)}
+.bb i{font-style:normal;font-size:42px;line-height:1}.bb:active{transform:translateY(2px)}
+.bb.g{background:var(--g)}.bb.r{background:var(--r)}.bb.y{background:var(--y)}.bb.p{background:var(--p)}.bb.b{background:var(--b)}
+
+/* ==== الميكروفون ==== */
+.mic{width:100%;margin-top:10px;border:0;border-radius:26px;background:var(--gray);color:#fff;font:inherit;font-weight:700;font-size:20px;padding:16px;cursor:pointer}
+.mic.on{background:var(--r)}
+.mic.full{background:var(--p);font-size:22px;padding:18px;margin:0 0 10px}
+.mic.full.on{background:var(--r)}
+.mic.spk{background:var(--y)}
+
+/* ==== الحقول ==== */
+.row{display:flex;gap:8px;align-items:center;margin:12px 0}
+.row label{color:var(--mute);font-size:16px}
+input[type=date],input[type=text],input[type=email],input[type=tel],input[type=number],input[type=password],select,textarea{font:inherit;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:12px;padding:10px;width:100%}
+input[type=date]{flex:1}
+textarea{min-height:70px;margin-top:8px;resize:vertical}
+details{margin-top:12px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:10px 14px}
+summary{cursor:pointer;color:var(--mute);font-weight:700}
+.sv{margin-top:8px;border:0;border-radius:12px;background:var(--g);color:#fff;font:inherit;font-weight:700;padding:10px 22px;cursor:pointer}
+
+/* ==== السجل ==== */
+.it{display:flex;gap:10px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:10px 12px;margin-bottom:8px}
+.ic{font-size:28px;flex:none}
+.it .m{flex:1;min-width:0}
+.it .d{font-size:14px;color:var(--mute)}
+.it .x{background:none;border:0;color:var(--mute);font-size:24px;cursor:pointer}
+.it .sp{background:none;border:0;font-size:24px;cursor:pointer}
+.empty{color:var(--mute);text-align:center;padding:14px}
+.clr{font:inherit;font-size:14px;color:var(--mute);background:none;border:0;cursor:pointer;margin-top:10px}
+
+/* ==== التقويم ==== */
+.pn2{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;font-size:20px;font-weight:700}
+.pn2 button{width:48px;height:42px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:20px;cursor:pointer}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;text-align:center}
+.cal .wd{font-size:12px;color:var(--mute)}
+.cal .dc{aspect-ratio:1;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--ink);font:inherit;font-size:17px;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;padding:2px}
+.cal .dc small{font-size:10px}
+.cal .dc.w{background:var(--g);color:#fff;border-color:var(--g)}
+.cal .dc.o{background:var(--r);color:#fff;border-color:var(--r)}
+.cal .dc.we{opacity:.55}
+.cal .dc.t{outline:2px solid var(--y)}
+
+/* ==== المنبثقات ==== */
+.md{position:fixed;inset:0;background:rgba(0,0,0,.55);display:none;align-items:flex-end;justify-content:center;z-index:9}
+.md.a{display:flex}
+.kp{background:var(--bg);width:100%;max-width:460px;border-radius:26px 26px 0 0;padding:16px 16px calc(16px + env(safe-area-inset-bottom))}
+.amt{font-size:46px;font-weight:700;text-align:center;direction:ltr;padding:6px;color:var(--y);min-height:68px}
+.keys{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;direction:ltr}
+.keys button{font:inherit;font-size:28px;font-weight:700;padding:14px 0;border-radius:16px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+.keys .ok{background:var(--g);color:#fff;border:0;grid-column:1/4;font-size:22px}
+.keys .no{background:var(--r);color:#fff;border:0}
+
+/* ==== Toast ==== */
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(20px + env(safe-area-inset-bottom));background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:16px;display:none;gap:14px;align-items:center;z-index:20;box-shadow:0 6px 20px rgba(0,0,0,.3)}
+.toast.a{display:flex}
+.toast button{background:none;border:0;color:#ffd77a;font:inherit;font-weight:700;cursor:pointer}
+
+/* ==== متنوعات ==== */
+.chs{display:flex;flex-wrap:wrap;gap:6px}
+.chs button{border:1px solid var(--line);background:var(--card);color:var(--ink);font:inherit;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:15px}
+.chs button.a{background:var(--g);color:#fff;border-color:var(--g)}
+.card2{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px;margin-bottom:12px}
+.fld{display:block;width:100%;font:inherit;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:12px;padding:10px;margin-bottom:8px}
+.fl{font-size:14px;color:var(--mute);margin:8px 0 2px;display:block;font-weight:700}
+.me{display:flex;gap:12px;align-items:center;margin-bottom:12px}
+.av{width:52px;height:52px;border-radius:50%;background:var(--y);color:#fff;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:700;overflow:hidden;flex:none}
+.av.big2{width:80px;height:80px;font-size:32px}
+.av img{width:100%;height:100%;object-fit:cover}
+.me b{font-size:19px}
+.me .d{font-size:14px;color:var(--mute)}
+.bt2{border:0;border-radius:14px;color:#fff;font:inherit;font-weight:700;font-size:17px;padding:12px;cursor:pointer}
+.bt2.g{background:var(--g)}.bt2.y{background:var(--y)}.bt2.r{background:var(--r)}.bt2.b{background:var(--b)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.rs{background:none;border:1px solid var(--line);border-radius:12px;color:var(--ink);font:inherit;padding:8px 14px;cursor:pointer;font-size:15px}
+.ex{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin:6px 0 12px;font-size:14px}
+.ex span{border:1px solid var(--line);border-radius:12px;padding:2px 10px;background:var(--card);color:var(--mute)}
+.ex:empty{display:none}
+
+/* ==== صفحة حول ==== */
+.about h3{color:var(--g);margin:20px 0 8px;font-size:20px}
+.about p,.about li{line-height:1.7;color:var(--ink);font-size:16px}
+.about ul{padding-inline-start:22px;margin:8px 0}
+.about code{background:var(--card);padding:2px 8px;border-radius:6px;font-family:monospace;direction:ltr;font-size:14px;border:1px solid var(--line)}
+.about .tbl{width:100%;border-collapse:collapse;margin:10px 0;font-size:15px}
+.about .tbl td,.about .tbl th{border:1px solid var(--line);padding:8px;text-align:right}
+.about .tbl th{background:var(--card);font-weight:700}
+.about .box{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px;margin:10px 0}
+.about .sign{text-align:center;font-family:'Aref Ruqaa','Amiri',serif;font-size:20px;color:var(--g);margin:24px 0 8px}
+.about .sign a{color:var(--g);direction:ltr;display:inline-block}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar">
+    <h1>📔 مفكرتي اليومية</h1>
+    <div class="who">
+      <b>ياسر الحسين</b>
+      <a href="mailto:kalimat2026go@gmail.com">kalimat2026go@gmail.com</a>
+    </div>
+  </div>
+  <div class="st" id="st"><span class="dot"></span><span id="stt">متصل</span></div>
+
+  <!-- زر تثبيت التطبيق -->
+  <button class="install" id="installBtn">📲 تثبيت التطبيق على الهاتف</button>
+
+  <!-- ============ القائمة الرئيسية ============ -->
+  <div class="pg a" id="menuPg">
+    <div class="menu">
+      <button class="mi" data-p="p1"><i>🏠</i> اليوم <span class="arr">›</span></button>
+      <button class="mi" data-p="p2"><i>📊</i> الملخص <span class="arr">›</span></button>
+      <button class="mi" data-p="p5"><i>📅</i> التقويم <span class="arr">›</span></button>
+      <button class="mi" data-p="p3"><i>📒</i> السجل <span class="arr">›</span></button>
+      <button class="mi" data-p="p4"><i>👤</i> حسابي <span class="arr">›</span></button>
+      <button class="mi" data-p="p6"><i>👔</i> مدير العمل <span class="arr">›</span></button>
+      <button class="mi" data-p="p7"><i>☁️</i> حفظ سحابي <span class="arr">›</span></button>
+      <button class="mi" data-p="p8"><i>💾</i> نسخ ومشاركة <span class="arr">›</span></button>
+      <button class="mi wa" data-p="p9"><i>💬</i> مراسلة عبر واتساب <span class="arr">›</span></button>
+      <button class="mi" data-p="p10"><i>ℹ️</i> حول التطبيق <span class="arr">›</span></button>
+    </div>
+  </div>
+
+  <!-- ============ صفحة اليوم ============ -->
+  <div class="pg" id="p1">
+    <button class="back" data-back>← رجوع</button>
+    <h2>🏠 اليوم</h2>
+    <div class="note" id="bn" style="display:none;background:#ffe9a8;color:#5c4400;border-radius:16px;padding:12px 14px;margin-bottom:12px;cursor:pointer;font-weight:700">🔔 حان وقت حفظ نسخة احتياطية — اضغط هنا</div>
+    <div class="stats">
+      <div class="s g"><b id="cw">0</b><span>أيام العمل</span></div>
+      <div class="s r"><b id="co">0</b><span>أيام العطل</span></div>
+      <div class="s y"><b id="cp">0</b><span>الدفعات</span><small id="cpn">(0)</small></div>
+    </div>
+    <div class="ex" id="ex1"></div>
+    <div class="row"><label>📅 التاريخ</label><input type="date" id="dt"></div>
+    <button class="mic full" id="full">🎤 تسجيل كامل بالصوت</button>
+    <div class="big">
+      <button class="bb g" id="bw"><i>✅</i>عمل</button>
+      <button class="bb r" id="bo"><i>🛏️</i>عطلة</button>
+      <button class="bb y" id="bp"><i>💵</i>دفعة</button>
+    </div>
+    <div class="big">
+      <button class="bb p" id="bbonus"><i>🎁</i>مكافأة</button>
+      <button class="bb b" id="bdeduct"><i>⚠️</i>خصم</button>
+      <button class="bb" id="badv" style="background:var(--gray)"><i>💸</i>سلفة</button>
+    </div>
+    <button class="mic" id="mic">🎤 تحدّث</button>
+    <button class="mic spk" id="sph">🔊 اسمعني</button>
+    <details><summary>✍️ كتابة ملاحظة</summary>
+      <textarea id="txt" placeholder="مثال: اليوم عملت، أو عطلة، أو قبضت دفعة 500، أو مكافأة 200"></textarea>
+      <button class="sv" id="save">حفظ</button>
+    </details>
+  </div>
+
+  <!-- ============ صفحة الملخص ============ -->
+  <div class="pg" id="p2">
+    <button class="back" data-back>← رجوع</button>
+    <h2>📊 الملخص</h2>
+    <div class="row2" style="margin-bottom:10px">
+      <button class="bt2 g" id="mw">أسبوعي</button>
+      <button class="bt2 y" id="mm">شهري</button>
+    </div>
+    <div class="pn2"><button id="nx">›</button><div id="pl"></div><button id="pv">‹</button></div>
+    <div class="stats">
+      <div class="s g"><b id="sw">0</b><span>أيام العمل</span></div>
+      <div class="s r"><b id="so">0</b><span>أيام العطل</span></div>
+      <div class="s y"><b id="sp">0</b><span>الدفعات</span><small id="spn">(0)</small></div>
+    </div>
+    <div id="wg" style="margin-bottom:12px"></div>
+    <div class="ex" id="ex2"></div>
+    <button class="mic spk" id="rp" style="margin:0 0 10px;background:var(--g)">📠 مشاركة تقرير (واتساب)</button>
+    <button class="mic spk" id="sps" style="margin:0 0 12px">🔊 اسمعني الملخص</button>
+    <div id="sl"></div>
+  </div>
+
+  <!-- ============ صفحة التقويم ============ -->
+  <div class="pg" id="p5">
+    <button class="back" data-back>← رجوع</button>
+    <h2>📅 التقويم</h2>
+    <div class="pn2"><button id="kn">›</button><span id="kl"></span><button id="kp">‹</button></div>
+    <div class="cal" id="kg"></div>
+    <div class="empty" style="font-size:14px;margin-top:10px">اضغط على أي يوم لتسجيله عملاً أو عطلة أو إضافة ساعات إضافية.</div>
+  </div>
+
+  <!-- ============ صفحة السجل ============ -->
+  <div class="pg" id="p3">
+    <button class="back" data-back>← رجوع</button>
+    <h2>📒 السجل الكامل</h2>
+    <div id="log"></div>
+    <button class="clr" id="clr">مسح الكل</button>
+  </div>
+
+  <!-- ============ صفحة حسابي ============ -->
+  <div class="pg" id="p4">
+    <button class="back" data-back>← رجوع</button>
+    <h2>👤 حسابي</h2>
+    <div class="card2">
+      <div class="me">
+        <div class="av big2" id="prav"></div>
+        <div style="display:flex;gap:6px;flex-direction:column">
+          <button class="rs" id="prpb">📷 صورة</button>
+          <button class="rs" id="prpx">إزالة</button>
+        </div>
+      </div>
+      <input type="file" id="prpic" accept="image/*" hidden>
+      <label class="fl">الاسم الكامل</label><input class="fld" id="prn" autocomplete="name">
+      <label class="fl">المهنة / الوظيفة</label><input class="fld" id="prj">
+      <label class="fl">جهة العمل</label><input class="fld" id="prw">
+      <label class="fl">رقم الهاتف</label><input class="fld" id="prph" type="tel">
+      <label class="fl">البريد الإلكتروني</label><input class="fld" id="prem" type="email">
+      <label class="fl">المدينة</label><input class="fld" id="prc">
+      <label class="fl">رمز العملة</label><input class="fld" id="prcu" maxlength="6" placeholder="$">
+      <label class="fl">الأجر اليومي</label><input class="fld" id="prdw" type="number" inputmode="decimal">
+      <label class="fl">أجر الساعة الإضافية</label><input class="fld" id="prot" type="number" inputmode="decimal">
+      <label class="fl">أيام العطلة الأسبوعية</label>
+      <div class="chs" id="prwe"></div>
+    </div>
+  </div>
+
+  <!-- ============ صفحة مدير العمل ============ -->
+  <div class="pg" id="p6">
+    <button class="back" data-back>← رجوع</button>
+    <h2>👔 مدير العمل</h2>
+    <div class="card2">
+      <h3 style="margin-top:0">بيانات المدير</h3>
+      <label class="fl">اسم المدير</label><input class="fld" id="mgname">
+      <label class="fl">رقم واتساب المدير (مع رمز الدولة)</label><input class="fld" id="mgwa" type="tel" placeholder="مثال: 96170123456">
+      <label class="fl">بريد المدير الإلكتروني</label><input class="fld" id="mgem" type="email">
+      <button class="bt2 g" style="width:100%;margin-top:8px" id="mgsave">💾 حفظ بيانات المدير</button>
+    </div>
+    <div class="card2">
+      <h3 style="margin-top:0">إرسال التقرير للمدير</h3>
+      <div class="row2">
+        <button class="bt2 g" id="mgrep">📤 إرسال التقرير (واتساب)</button>
+        <button class="bt2 b" id="mgmail">✉️ إرسال بالبريد</button>
+      </div>
+    </div>
+    <div class="card2">
+      <h3 style="margin-top:0">إضافة مكافأة أو خصم لعامل</h3>
+      <label class="fl">اسم العامل</label><input class="fld" id="wkname" placeholder="اسم العامل">
+      <label class="fl">نوع الحركة</label>
+      <select id="wktype">
+        <option value="bonus">🎁 مكافأة</option>
+        <option value="deduct">⚠️ خصم</option>
+        <option value="ot">⏱️ ساعة إضافية</option>
+      </select>
+      <label class="fl">المبلغ</label><input class="fld" id="wkamt" type="number" inputmode="decimal">
+      <label class="fl">السبب / ملاحظة</label><input class="fld" id="wknote" placeholder="مثال: أداء ممتاز / تأخير">
+      <button class="bt2 y" style="width:100%;margin-top:8px" id="wkadd">➕ إضافة</button>
+    </div>
+    <div id="wklist"></div>
+  </div>
+
+  <!-- ============ صفحة الحفظ السحابي ============ -->
+  <div class="pg" id="p7">
+    <button class="back" data-back>← رجوع</button>
+    <h2>☁️ حفظ سحابي</h2>
+    <div id="clst" class="empty">—</div>
+    <div id="cln" class="card2" style="display:none">
+      <b>السحابة غير مفعّلة</b>
+      <p style="font-size:15px;color:var(--mute);line-height:1.7">التطبيق يعمل بالكامل محلياً بدون إنترنت. إذا أردت تفعيل المزامنة السحابية عبر Firebase المجاني، افتح ملف <code>firebase-config.js</code> واتبع التعليمات داخله (خطوة بخطوة بالعربية).</p>
+    </div>
+    <div id="clf" style="display:none">
+      <div class="card2">
+        <input class="fld" id="clem" type="email" placeholder="البريد الإلكتروني">
+        <input class="fld" id="clpw" type="password" placeholder="كلمة المرور (6 أحرف على الأقل)">
+        <div class="row2">
+          <button class="bt2 g" id="clin">دخول</button>
+          <button class="bt2 y" id="clup">حساب جديد</button>
+        </div>
+        <button class="rs" id="clrs" style="margin-top:8px">نسيت كلمة المرور؟</button>
+      </div>
+    </div>
+    <div id="clo" style="display:none">
+      <div class="card2">
+        <div id="clme" style="margin-bottom:8px"></div>
+        <div class="row2">
+          <button class="bt2 g" id="clsv">☁️ احفظ الآن</button>
+          <button class="bt2 y" id="clpl">⬇️ استرجع</button>
+        </div>
+        <button class="rs" id="clout" style="margin-top:8px">تسجيل الخروج</button>
+      </div>
+    </div>
+    <div class="card2">
+      <h3 style="margin-top:0">📦 نسخ احتياطية محلية</h3>
+      <div id="sn"></div>
+    </div>
+  </div>
+
+  <!-- ============ صفحة نسخ ومشاركة ============ -->
+  <div class="pg" id="p8">
+    <button class="back" data-back>← رجوع</button>
+    <h2>💾 نسخ ومشاركة</h2>
+    <div class="card2">
+      <h3 style="margin-top:0">نسخ احتياطي كامل</h3>
+      <div class="lb" id="lb" style="color:var(--mute);font-size:14px;margin-bottom:10px">—</div>
+      <button class="bt2 g" style="width:100%;margin-bottom:8px" id="bsh">📤 مشاركة نسخة (JSON)</button>
+      <button class="bt2 b" style="width:100%;margin-bottom:8px" id="bsf">📥 حفظ في مجلد الهاتف</button>
+      <button class="bt2 y" style="width:100%;margin-bottom:8px" id="bgd">☁️ حفظ في Google Drive</button>
+      <button class="bt2" style="width:100%;background:var(--gray);margin-bottom:8px" id="brs">📁 استعادة من ملف</button>
+      <input type="file" id="fi" accept=".txt,.json" hidden>
+    </div>
+    <div class="card2">
+      <h3 style="margin-top:0">تصدير الجداول</h3>
+      <button class="bt2 g" style="width:100%;margin-bottom:8px" id="bexp-csv">📊 تصدير Excel (CSV)</button>
+      <button class="bt2 r" style="width:100%;margin-bottom:8px" id="bexp-pdf">📄 تصدير كشف PDF</button>
+      <button class="bt2 y" style="width:100%" id="bcopy">📋 نسخ النص للحافظة</button>
+    </div>
+  </div>
+
+  <!-- ============ صفحة واتساب ============ -->
+  <div class="pg" id="p9">
+    <button class="back" data-back>← رجوع</button>
+    <h2>💬 مراسلة عبر واتساب</h2>
+    <div class="card2">
+      <label class="fl">رقم المستلم (مع رمز الدولة بدون +)</label>
+      <input class="fld" id="wanum" type="tel" placeholder="96170123456">
+      <label class="fl">الرسالة</label>
+      <textarea id="wamsg" style="min-height:120px">مرحباً، هذه رسالة من مفكرتي اليومية 👋</textarea>
+      <button class="bt2 g" style="width:100%;margin-top:8px" id="wasend">💬 إرسال عبر واتساب</button>
+    </div>
+    <div class="card2">
+      <h3 style="margin-top:0">إرسال سريع للمدير</h3>
+      <button class="bt2 g" style="width:100%;margin-bottom:8px" id="wapay">💰 إرسال طلب دفعة للمدير</button>
+      <button class="bt2 y" style="width:100%" id="warep">📊 إرسال التقرير الشهري</button>
+    </div>
+  </div>
+
+  <!-- ============ صفحة حول ============ -->
+  <div class="pg about" id="p10">
+    <button class="back" data-back>← رجوع</button>
+    <h2>ℹ️ حول التطبيق</h2>
+    <div class="box">
+      <b style="font-size:19px">📔 مفكرتي اليومية</b>
+      <p style="margin:6px 0">تطبيق عربي شامل لتسجيل أيام العمل والدفعات والمكافآت والخصومات بالصوت أو الكتابة، يعمل بدون إنترنت، ويُثبَّت على هاتفك مثل أي تطبيق آخر.</p>
+      <p style="margin:6px 0;font-size:15px"><b>المطوّر:</b> ياسر الحسين<br>
+      <b>البريد:</b> <a href="mailto:kalimat2026go@gmail.com" style="color:var(--g);direction:ltr;display:inline-block">kalimat2026go@gmail.com</a></p>
+    </div>
+
+    <h3>📲 كيف أُثبّت التطبيق على الهاتف؟</h3>
+    <p><b>على Android (Chrome):</b></p>
+    <ul>
+      <li>افتح رابط التطبيق في متصفح Chrome.</li>
+      <li>اضغط الزر الأخضر <b>📲 تثبيت التطبيق</b> أعلى الصفحة.</li>
+      <li>اضغط "تثبيت" في النافذة التي تظهر.</li>
+      <li>ستجد أيقونة التطبيق على شاشة هاتفك.</li>
+    </ul>
+    <p><b>على iPhone (Safari):</b></p>
+    <ul>
+      <li>افتح الرابط في متصفح Safari.</li>
+      <li>اضغط زر المشاركة ⬆️ أسفل الشاشة.</li>
+      <li>اختر <b>"إضافة إلى الشاشة الرئيسية"</b>.</li>
+      <li>اضغط "إضافة".</li>
+    </ul>
+
+    <h3>🗂️ ماذا تفعل كل قائمة؟</h3>
+    <table class="tbl">
+      <tr><th>القائمة</th><th>الوظيفة</th></tr>
+      <tr><td>🏠 اليوم</td><td>تسجيل عمل/عطلة/دفعة/مكافأة/خصم بالصوت أو الكتابة.</td></tr>
+      <tr><td>📊 الملخص</td><td>إحصائيات أسبوعية وشهرية ومستحقاتك.</td></tr>
+      <tr><td>📅 التقويم</td><td>اضغط أي يوم لتسجيله أو إضافة ساعات إضافية.</td></tr>
+      <tr><td>📒 السجل</td><td>كل حركاتك مرتبة، مع إمكانية الحذف.</td></tr>
+      <tr><td>👤 حسابي</td><td>ملفك الشخصي: صورة، اسم، مهنة، أجر يومي.</td></tr>
+      <tr><td>👔 مدير العمل</td><td>إرسال تقارير للمدير + إضافة مكافأة/خصم لعامل.</td></tr>
+      <tr><td>☁️ حفظ سحابي</td><td>مزامنة عبر Firebase (اختياري).</td></tr>
+      <tr><td>💾 نسخ ومشاركة</td><td>تصدير Excel / PDF / JSON أو حفظ في Drive.</td></tr>
+      <tr><td>💬 واتساب</td><td>فتح واتساب مباشرة لمراسلة أي شخص.</td></tr>
+    </table>
+
+    <h3>🎙️ العبارات الصوتية المدعومة</h3>
+    <table class="tbl">
+      <tr><th>تقول</th><th>يفهم</th></tr>
+      <tr><td>"اليوم عملت"</td><td>✅ يوم عمل</td></tr>
+      <tr><td>"أخذت عطلة"</td><td>🛏️ يوم عطلة</td></tr>
+      <tr><td>"قبضت خمسمية"</td><td>💵 دفعة 500</td></tr>
+      <tr><td>"مكافأة 200"</td><td>🎁 مكافأة</td></tr>
+      <tr><td>"خصم 50"</td><td>⚠️ خصم</td></tr>
+      <tr><td>"أخذت سلفة 300"</td><td>💸 سلفة</td></tr>
+      <tr><td>"دين عليّ لعلي 500"</td><td>📉 دين عليك</td></tr>
+      <tr><td>"أعطيت محمد مية"</td><td>📈 دين لك</td></tr>
+    </table>
+    <p style="font-size:14px;color:var(--mute)">ملاحظة: الأرقام العربية مدعومة (مية، خمسمية، ألف، ألفين، مليون...). قبل الحفظ تظهر شاشة مراجعة لتأكيد ما فُهم.</p>
+
+    <h3>💰 كيف يُحسب رصيدي؟</h3>
+    <div class="box" style="direction:rtl;font-size:15px;line-height:1.8">
+      الرصيد = (أيام العمل × الأجر اليومي)<br>
+      + (الساعات الإضافية × أجر الساعة)<br>
+      + المكافآت والإكراميات<br>
+      − الدفعات المستلمة<br>
+      − السلف<br>
+      − الخصومات
+    </div>
+
+    <h3>🔒 خصوصيتك</h3>
+    <p>جميع بياناتك تُحفظ على هاتفك فقط. لا نرسل أي شيء لأي جهة إلا إذا فعّلت الحفظ السحابي بنفسك، أو شاركت تقريراً بزر واتساب/البريد.</p>
+
+    <h3>🆘 مشاكل شائعة</h3>
+    <ul>
+      <li><b>الزر الصوتي لا يعمل:</b> استخدم Chrome على Android أو Safari على iPhone. تأكد من السماح للميكروفون.</li>
+      <li><b>لا يظهر زر التثبيت:</b> التطبيق يجب أن يكون منشوراً على HTTPS (مثل GitHub Pages).</li>
+      <li><b>الصوت لا يفهمني:</b> من صفحة "حسابي" لا يوجد، لكن جرّب التحدث بوضوح وببطء.</li>
+    </ul>
+
+    <div class="sign">
+      <div>✍️ ياسر الحسين</div>
+      <a href="mailto:kalimat2026go@gmail.com">kalimat2026go@gmail.com</a>
+      <div style="font-size:13px;color:var(--mute);margin-top:6px">✦ kalimat ✦</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ============ منبثقات ============ -->
+<div class="toast" id="ts"><span id="tm"></span><button id="undo">تراجع</button></div>
+
+<!-- keypad -->
+<div class="md" id="md"><div class="kp">
+  <h3 id="kptitle" style="margin-top:0;text-align:center">المبلغ</h3>
+  <div class="amt" id="am">0</div>
+  <div class="keys" id="ks"></div>
+</div></div>
+
+<!-- preview voice -->
+<div class="md" id="pvw"><div class="kp" style="max-height:88vh;overflow:auto">
+  <div style="font-size:20px;font-weight:700;margin-bottom:6px">🎤 هذا ما فهمته:</div>
+  <textarea id="pt" style="min-height:54px"></textarea>
+  <div id="pi" style="margin-top:8px"></div>
+  <div class="row" style="margin:6px 0">
+    <button class="rs" id="pls">🔊 اسمع</button>
+    <button class="rs" id="prt">🔣 أعد التسجيل</button>
+  </div>
+  <div class="keys" style="grid-template-columns:1fr 2fr">
+    <button class="no" id="pc">✕</button>
+    <button class="ok" id="pk" style="font-size:22px">✓ احفظ الكل</button>
+  </div>
+</div></div>
+
+<!-- day modal -->
+<div class="md" id="dy"><div class="kp">
+  <h3 id="dyt" style="margin-top:0"></h3>
+  <div class="row2">
+    <button class="bt2 g" id="dyw">✅ عمل</button>
+    <button class="bt2 r" id="dyf">🛏️ عطلة</button>
+  </div>
+  <div class="me" style="justify-content:space-between;margin:12px 0">
+    <button class="rs" id="dym" style="font-size:24px;padding:6px 18px">−</button>
+    <span>⏱️ ساعات إضافية: <b id="dyv">0</b></span>
+    <button class="rs" id="dyp" style="font-size:24px;padding:6px 18px">+</button>
+  </div>
+  <div class="row2">
+    <button class="bt2" id="dyc" style="background:var(--gray)">مسح اليوم</button>
+    <button class="bt2" id="dyx" style="background:#334155">إغلاق</button>
+  </div>
+</div></div>
+
+<script>
+'use strict';
+/* ============================================================
+   مفكرتي اليومية — ياسر الحسين
+   التطبيق كامل، يعمل بدون إنترنت.
+   ============================================================ */
+
+const KEY='mufakkirati_v2';
+const $=id=>document.getElementById(id);
+let E=[];try{E=JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){E=[]}
+const iso=d=>d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+const pd=s=>new Date(s+'T00:00:00');
+const nf=n=>Number(n).toLocaleString('ar-EG');
+const dl=s=>{try{return pd(s).toLocaleDateString('ar',{weekday:'long',day:'numeric',month:'long'})}catch(_){return s}};
+$('dt').value=iso(new Date());
+
+/* ---------- الحفظ ---------- */
+function persist(){try{localStorage.setItem(KEY,JSON.stringify(E))}catch(e){}schedPush()}
+
+/* ---------- تنبيه (Toast) ---------- */
+let last=null,tt;
+function toast(m,u){
+  $('undo').style.display=u?'':'none';
+  $('tm').textContent=m;
+  $('ts').classList.add('a');
+  last=u;clearTimeout(tt);tt=setTimeout(()=>$('ts').classList.remove('a'),5000)
+}
+$('undo').onclick=()=>{if(last){E=last;persist();render()}$('ts').classList.remove('a')};
+
+/* ---------- إضافة حركات ---------- */
+function add(items,note,msg){
+  const prev=JSON.stringify(E),date=$('dt').value||iso(new Date());
+  items.forEach(p=>{
+    if(p.type==='work'||p.type==='off')
+      E=E.filter(e=>!(e.date===date&&(e.type==='work'||e.type==='off')));
+    E.push({id:Date.now()+Math.random(),date,type:p.type,amount:p.amount||0,cur:p.cur||'',who:p.who||'',place:p.place||'',note:p.note||note||'',ts:Date.now()});
+  });
+  persist();render();
+  toast(msg||'تم الحفظ ✅',JSON.parse(prev));
+}
+
+/* ---------- التبويبات ---------- */
+function goto(p){
+  document.querySelectorAll('.pg').forEach(x=>x.classList.toggle('a',x.id===p));
+  render();
+}
+document.querySelectorAll('[data-p]').forEach(b=>b.onclick=()=>goto(b.dataset.p));
+document.querySelectorAll('[data-back]').forEach(b=>b.onclick=()=>goto('menuPg'));
+
+/* ---------- الأزرار السريعة ---------- */
+$('bw').onclick=()=>add([{type:'work'}],'','سُجّل يوم عمل ✅');
+$('bo').onclick=()=>add([{type:'off'}],'','سُجّلت عطلة 🛏️');
+$('bp').onclick=()=>{amt='';$('am').textContent='0';$('kptitle').textContent='الدفعة';kpCb=v=>add([{type:'pay',amount:v}],'دفعة','سُجّلت الدفعة 💵');$('md').classList.add('a')};
+$('bbonus').onclick=()=>{amt='';$('am').textContent='0';$('kptitle').textContent='المكافأة 🎁';kpCb=v=>add([{type:'bonus',amount:v}],'مكافأة','سُجّلت المكافأة 🎁');$('md').classList.add('a')};
+$('bdeduct').onclick=()=>{amt='';$('am').textContent='0';$('kptitle').textContent='الخصم ⚠️';kpCb=v=>add([{type:'deduct',amount:v}],'خصم','سُجّل الخصم ⚠️');$('md').classList.add('a')};
+$('badv').onclick=()=>{amt='';$('am').textContent='0';$('kptitle').textContent='السلفة 💸';kpCb=v=>add([{type:'adv',amount:v}],'سلفة','سُجّلت السلفة 💸');$('md').classList.add('a')};
+$('save').onclick=()=>{const t=$('txt').value.trim();if(!t)return;add(parseText(t),t);$('txt').value=''};
+
+/* ---------- لوحة الأرقام ---------- */
+let amt='',kpCb=null;
+const KS=['1','2','3','4','5','6','7','8','9','⌫','0','.'];
+KS.forEach(k=>{
+  const b=document.createElement('button');b.textContent=k;
+  if(k==='⌫')b.className='no';
+  b.onclick=()=>{
+    if(k==='⌫'){amt=amt.slice(0,-1)}
+    else if(k==='.'){if(!amt.includes('.'))amt=(amt||'0')+'.'}
+    else if(amt.length<10)amt+=k;
+    $('am').textContent=amt||'0';
+  };
+  $('ks').append(b);
+});
+const okB=document.createElement('button');
+okB.textContent='✓ تأكيد';
+okB.className='ok';
+okB.onclick=()=>{
+  const v=parseFloat(amt);
+  if(!v&&v!==0){$('md').classList.remove('a');return}
+  $('md').classList.remove('a');
+  if(kpCb){const f=kpCb;kpCb=null;f(v);return}
+};
+$('ks').append(okB);
+
+/* ============================================================
+   محرك التحليل العربي للصوت والنص
+   ============================================================ */
+function norm(s){return s.replace(/[\u064B-\u065F\u0670\u0640]/g,'').replace(/[أإآ]/g,'ا').replace(/ى/g,'ي').replace(/ة/g,'ه')}
+
+const NUMS={واحد:1,احد:1,اثنين:2,اثنان:2,اثنتين:2,اثنا:2,ثلاث:3,ثلاثه:3,اربعه:4,اربعة:4,اربع:4,خمس:5,خمسه:5,سته:6,ست:6,سبعه:7,سبع:7,ثمانيه:8,ثمان:8,ثمانية:8,ثماني:8,تسعه:9,تسع:9,عشره:10,عشر:10,عشرين:20,عشرون:20,ثلاثين:30,ثلاثون:30,اربعين:40,اربعون:40,خمسين:50,خمسون:50,ستين:60,ستون:60,سبعين:70,سبعون:70,ثمانين:80,ثمانون:80,تسعين:90,تسعون:90,مئه:100,ماءه:100,مئه:100,ميتين:200,مئتين:200,مئتان:200,ميتان:200,ثلاثمئه:300,اربعمئه:400,خمسمئه:500,خمسميه:500,خمسمائة:500,ستمئه:600,سبعمئه:700,ثمانمئه:800,تسعمئه:900,الف:1000,الفين:2000,مليون:1000000,مليونين:2000000};
+
+const KW={};
+[['work','عمل عملت دوام اشتغلت شغلت داومت شغل'],
+ ['off','عطله اجازه اجازة راحه استراحه عطل'],
+ ['pay','دفعه دفعة قبضت استلمت قبض وصلني دفعوا'],
+ ['adv','سلفه سلفة استلفت سلف اخذت سلفة'],
+ ['bonus','مكافأة مكافأه اكراميه اكرامية بونص'],
+ ['deduct','خصم خصمه غرامه غرامة عقوبه عقوبة'],
+ ['debt','دين دين علي مديون'],
+ ['place','ورشه ورشة مشروع موقع مصنع محل مزرعه']
+].forEach(([k,list])=>list.split(' ').forEach(w=>KW[w]=k));
+
+function parseNum(tk,i){
+  let cur=0,tot=0,used=false,last='';
+  for(let j=i;j<tk.length;j++){
+    const w=tk[j];
+    if(/^\d+(\.\d+)?$/.test(w)){cur=parseFloat(w);used=true;last='d';continue}
+    const v=NUMS[w];
+    if(v){
+      if(v>=1000){tot+=(cur||1)*v;cur=0;last='k'}
+      else{cur+=v;last='n'}
+      used=true;continue;
+    }
+    break;
+  }
+  return used?{val:tot+cur,end:i}:null;
+}
+
+function parseText(t){
+  const O=t.replace(/[٠-٩]/g,d=>'٠١٢٣٤٥٦٧٨٩'.indexOf(d)).split(/[\s,،.؛!?]+/).filter(Boolean);
+  const tk=O.map(norm);
+  const out=[];
+  let place='';
+  for(let i=0;i<tk.length;i++){
+    const w=tk[i];
+    const k=KW[w];
+    if(!k)continue;
+    if(k==='work'||k==='off'){out.push({type:k});continue}
+    if(k==='place'){
+      const parts=[];
+      for(let j=i+1;j<tk.length&&parts.length<3;j++){
+        if(KW[tk[j]])break;
+        parts.push(O[j]);
+      }
+      if(parts.length)place=parts.join(' ');
+      continue;
+    }
+    // pay / adv / bonus / deduct / debt → يحتاج رقم
+    const n=parseNum(tk,i+1);
+    if(k==='debt'){
+      const isMine=tk.slice(0,3).some(x=>x==='لي'||x==='علي'||x==='على');
+      const isOn=tk.slice(0,3).some(x=>x==='عليّ'||x==='على'||x==='لـ');
+      const type=isMine?'dme':(isOn?'dli':'dli');
+      out.push({type,amount:n?n.val:0,who:''});
+    }else{
+      out.push({type:k,amount:n?n.val:0});
+    }
+  }
+  if(!out.length)out.push({type:'note',note:t.trim()});
+  return out;
+}
+
+/* ============================================================
+   رسم كل شيء
+   ============================================================ */
+const ICONS={work:'✅',off:'🛏️',pay:'💵',bonus:'🎁',deduct:'⚠️',adv:'💸',dli:'📈',dme:'📉',ot:'⏱️',note:'📝'};
+
+function lbl(e){
+  const m=e.amount?(nf(e.amount)+(P.cur?' '+P.cur:'')):'—';
+  return({
+    work:'يوم عمل'+(e.place?' — '+e.place:''),
+    off:'عطلة',
+    pay:'دفعة '+m,
+    bonus:'مكافأة '+m,
+    deduct:'خصم '+m,
+    adv:'سلفة '+m,
+    dli:'دين لك '+(e.who||'')+' '+m,
+    dme:'دين عليك '+(e.who||'')+' '+m,
+    ot:'ساعات إضافية '+e.amount,
+    note:e.note
+  })[e.type]||'';
+}
+
+function row(e,del){
+  const d=document.createElement('div');d.className='it';
+  const ic=document.createElement('span');ic.className='ic';ic.textContent=ICONS[e.type]||'📝';
+  const m=document.createElement('div');m.className='m';
+  const a=document.createElement('div');a.textContent=lbl(e);
+  const b=document.createElement('div');b.className='d';b.textContent=dl(e.date);
+  m.append(a,b);d.append(ic,m);
+  const sp=document.createElement('button');sp.className='sp';sp.textContent='🔊';sp.onclick=()=>say(dl(e.date)+'، '+lbl(e));d.append(sp);
+  if(del){
+    const x=document.createElement('button');x.className='x';x.textContent='✕';
+    x.onclick=()=>{E=E.filter(k=>k.id!==e.id);persist();render()};d.append(x);
+  }
+  return d;
+}
+
+function render(){
+  // اليوم
+  $('cw').textContent=nf(E.filter(e=>e.type==='work').length);
+  $('co').textContent=nf(E.filter(e=>e.type==='off').length);
+  const pays=E.filter(e=>e.type==='pay');
+  $('cp').textContent=nf(pays.reduce((a,e)=>a+e.amount,0));
+  $('cpn').textContent='('+nf(pays.length)+')';
+  $('ex1').innerHTML=extras(E);
+
+  // الملخص
+  const[f,t,lab]=range();
+  $('pl').textContent=lab;
+  const L=E.filter(e=>e.date>=f&&e.date<=t).sort((a,b)=>a.date.localeCompare(b.date));
+  $('sw').textContent=nf(L.filter(e=>e.type==='work').length);
+  $('so').textContent=nf(L.filter(e=>e.type==='off').length);
+  const LP=L.filter(e=>e.type==='pay');
+  $('sp').textContent=nf(LP.reduce((a,e)=>a+e.amount,0));
+  $('spn').textContent='('+nf(LP.length)+')';
+  $('ex2').innerHTML=extras(L);
+  renderWage(L);
+  $('sl').innerHTML=L.length?'':'<div class="empty">لا توجد تسجيلات في هذه الفترة.</div>';
+  L.forEach(e=>$('sl').append(row(e,false)));
+
+  // السجل
+  const A=[...E].sort((a,b)=>b.date.localeCompare(a.date)||b.ts-a.ts);
+  $('log').innerHTML=A.length?'':'<div class="empty">لا توجد ملاحظات بعد.</div>';
+  A.forEach(e=>$('log').append(row(e,true)));
+
+  // التقويم والمدير
+  renderCal();
+  renderBk();
+  renderWorkerList();
+  renderCloud();
+}
+
+function extras(L){
+  const s=t=>L.filter(e=>e.type===t).reduce((a,e)=>a+e.amount,0);
+  const out=[];
+  if(s('bonus'))out.push('🎁 مكافآت '+nf(s('bonus')));
+  if(s('deduct'))out.push('⚠️ خصومات '+nf(s('deduct')));
+  if(s('adv'))out.push('💸 سلف '+nf(s('adv')));
+  if(s('dli'))out.push('📈 لك '+nf(s('dli')));
+  if(s('dme'))out.push('📉 عليك '+nf(s('dme')));
+  return out.map(x=>'<span>'+x+'</span>').join('');
+}
+
+/* ---------- نطاق الملخص ---------- */
+let mode='w',off=0;
+$('mw').onclick=()=>{mode='w';off=0;render()};
+$('mm').onclick=()=>{mode='m';off=0;render()};
+$('pv').onclick=()=>{off--;render()};
+$('nx').onclick=()=>{if(off<0)off++;render()};
+function range(){
+  const n=new Date();
+  if(mode==='m'){
+    const a=new Date(n.getFullYear(),n.getMonth()+off,1),b=new Date(a.getFullYear(),a.getMonth()+1,0);
+    return[iso(a),iso(b),a.toLocaleDateString('ar',{month:'long',year:'numeric'})];
+  }
+  const a=new Date(n.getFullYear(),n.getMonth(),n.getDate()-((n.getDay()+1)%7)+off*7),b=new Date(a.getFullYear(),a.getMonth(),a.getDate()+6);
+  const f=d=>d.toLocaleDateString('ar',{day:'numeric',month:'long'});
+  return[iso(a),iso(b),'من '+f(a)+' إلى '+f(b)];
+}
+
+/* ---------- الأجور ---------- */
+function renderWage(L){
+  if(!(P.dw||P.otr)){$('wg').innerHTML='<div class="empty" style="font-size:15px">أدخل الأجر اليومي في صفحة "حسابي" لحساب المستحقات.</div>';return}
+  const d=L.filter(e=>e.type==='work').length;
+  const ot=L.filter(e=>e.type==='ot').reduce((a,e)=>a+e.amount,0);
+  const s=t=>L.filter(e=>e.type===t).reduce((a,e)=>a+e.amount,0);
+  const due=d*P.dw+ot*P.otr;
+  const got=s('pay'),adv=s('adv'),bonus=s('bonus'),ded=s('deduct');
+  const bal=due-got-adv+bonus-ded;
+  $('wg').innerHTML=[
+    ['⏱️ ساعات إضافية',nf(ot)],
+    ['💰 المستحق',nf(due)+' '+P.cur],
+    ['💵 المقبوض',nf(got)+' '+P.cur],
+    ['💸 السلف',nf(adv)+' '+P.cur],
+    ['🎁 المكافآت',nf(bonus)+' '+P.cur],
+    ['⚠️ الخصومات',nf(ded)+' '+P.cur],
+    ['🏦 الباقي لك',nf(bal)+' '+P.cur]
+  ].map(x=>'<div class="it" style="justify-content:space-between"><span>'+x[0]+'</span><b>'+x[1]+'</b></div>').join('');
+}
+
+/* ---------- التحدث ---------- */
+function say(t){
+  if(!window.speechSynthesis){alert('المتصفح لا يدعم النطق.');return}
+  speechSynthesis.cancel();
+  const u=new SpeechSynthesisUtterance(t);
+  u.lang='ar-SA';u.rate=.85;
+  speechSynthesis.speak(u);
+}
+$('sph').onclick=()=>say('أيام العمل '+E.filter(e=>e.type==='work').length+'، أيام العطلة '+E.filter(e=>e.type==='off').length+'.');
+$('sps').onclick=()=>{
+  const[f,t,lab]=range();
+  const L=E.filter(e=>e.date>=f&&e.date<=t);
+  say(lab+'. أيام العمل '+L.filter(e=>e.type==='work').length+'، أيام العطلة '+L.filter(e=>e.type==='off').length+'.');
+};
+
+/* ---------- الصوت ---------- */
+const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+let rec=null,frec=null,on=false,fon=false,ftxt='';
+function getLang(){try{return JSON.parse(localStorage.getItem(KEY+'_cfg')||'{}').lang||'ar-SA'}catch(e){return 'ar-SA'}}
+
+$('mic').onclick=()=>{
+  if(!SR){alert('المتصفح لا يدعم الإدخال الصوتي. استخدم Chrome.');return}
+  if(on){rec&&rec.stop();return}
+  rec=new SR();rec.lang=getLang();rec.interimResults=false;
+  rec.onresult=e=>{
+    const r=e.results[e.results.length-1][0].transcript;
+    const pv=parseText(r);
+    pvItems=pv;pvText=r;$('pt').value=r;renderPv();$('pvw').classList.add('a');
+  };
+  rec.onend=()=>{on=false;$('mic').classList.remove('on');$('mic').textContent='🎤 تحدّث'};
+  rec.start();on=true;$('mic').classList.add('on');$('mic').textContent='⏹ إيقاف';
+};
+
+$('full').onclick=()=>{
+  if(!SR){alert('المتصفح لا يدعم الإدخال الصوتي. استخدم Chrome.');return}
+  if(fon){frec&&frec.stop();return}
+  ftxt='';
+  frec=new SR();frec.lang=getLang();frec.continuous=true;frec.interimResults=false;
+  frec.onresult=e=>{
+    for(let i=e.resultIndex;i<e.results.length;i++)
+      if(e.results[i].isFinal)ftxt+=' '+e.results[i][0].transcript;
+  };
+  frec.onend=()=>{
+    fon=false;$('full').classList.remove('on');$('full').textContent='🎤 تسجيل كامل بالصوت';
+    pvText=ftxt.trim();pvItems=parseText(pvText);$('pt').value=pvText;renderPv();$('pvw').classList.add('a');
+  };
+  frec.start();fon=true;$('full').classList.add('on');$('full').textContent='⏹ اضغط للإنهاء';
+};
+
+/* ---------- معاينة الصوت ---------- */
+let pvItems=[],pvText='';
+function renderPv(){
+  $('pi').innerHTML=pvItems.length?'':'<div class="empty">لم أفهم شيئاً. أعد التسجيل.</div>';
+  pvItems.forEach((it,i)=>{
+    const d=document.createElement('div');d.className='it';
+    const ic=document.createElement('span');ic.className='ic';ic.textContent=ICONS[it.type]||'📝';
+    const m=document.createElement('div');m.className='m';m.textContent=lbl(it);
+    d.append(ic,m);
+    const x=document.createElement('button');x.className='x';x.textContent='✕';x.onclick=()=>{pvItems.splice(i,1);renderPv()};d.append(x);
+    $('pi').append(d);
+  });
+}
+$('pt').oninput=()=>{pvText=$('pt').value;pvItems=parseText(pvText);renderPv()};
+$('pls').onclick=()=>say(pvItems.map(lbl).join('، '));
+$('pc').onclick=()=>$('pvw').classList.remove('a');
+$('prt').onclick=()=>{$('pvw').classList.remove('a');setTimeout(()=>$('full').click(),200)};
+$('pk').onclick=()=>{
+  if(!pvItems.length)return;
+  $('pvw').classList.remove('a');
+  add(pvItems.map(x=>({...x})),pvText,'سُجّل الكل ✅');
+};
+
+/* ---------- التقويم ---------- */
+const WSN=['أحد','اثنين','ثلاثاء','أربعاء','خميس','جمعة','سبت'];
+const MN=['يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر','أكتوبر','نوفمبر','ديسمبر'];
+let cm=new Date();cm=new Date(cm.getFullYear(),cm.getMonth(),1);
+let dsel='';
+$('kn').onclick=()=>{cm=new Date(cm.getFullYear(),cm.getMonth()+1,1);renderCal()};
+$('kp').onclick=()=>{cm=new Date(cm.getFullYear(),cm.getMonth()-1,1);renderCal()};
+
+function dayMap(){
+  const m={};
+  E.forEach(e=>{
+    const o=m[e.date]||(m[e.date]={t:'',ot:0});
+    if(e.type==='work'||e.type==='off')o.t=e.type;
+    else if(e.type==='ot')o.ot+=e.amount;
+  });
+  return m;
+}
+
+function renderCal(){
+  $('kl').textContent=MN[cm.getMonth()]+' '+cm.getFullYear();
+  const g=$('kg');g.innerHTML='';
+  WSN.forEach(w=>{const d=document.createElement('div');d.className='wd';d.textContent=w;g.append(d)});
+  for(let i=0;i<cm.getDay();i++)g.append(document.createElement('div'));
+  const n=new Date(cm.getFullYear(),cm.getMonth()+1,0).getDate();
+  const M=dayMap();
+  for(let d=1;d<=n;d++){
+    const dt=new Date(cm.getFullYear(),cm.getMonth(),d),k=iso(dt),x=M[k]||{};
+    const b=document.createElement('button');
+    b.className='dc'+(x.t==='work'?' w':x.t==='off'?' o':'')+(P.we.includes(dt.getDay())?' we':'')+(k===iso(new Date())?' t':'');
+    b.textContent=d;
+    if(x.ot){const s=document.createElement('small');s.textContent=nf(x.ot);b.append(s)}
+    b.onclick=()=>openDay(k);
+    g.append(b);
+  }
+}
+
+function openDay(k){
+  dsel=k;
+  $('dyt').textContent=dl(k);
+  const L=E.filter(e=>e.date===k);
+  const ot=L.filter(e=>e.type==='ot').reduce((a,e)=>a+e.amount,0);
+  $('dyv').textContent=nf(ot);
+  $('dy').classList.add('a');
+}
+function mk(k,type,amount){return{id:Date.now()+Math.random(),date:k,type,amount:amount||0,cur:'',who:'',place:'',note:'',ts:Date.now()}}
+function setT(k,t){
+  E=E.filter(e=>!(e.date===k&&(e.type==='work'||e.type==='off')));
+  E.push(mk(k,t));
+  persist();render();
+}
+function addOt(k,d){
+  const o=E.find(e=>e.date===k&&e.type==='ot');
+  if(o){o.amount=Math.max(0,o.amount+d);if(!o.amount)E=E.filter(x=>x!==o)}
+  else if(d>0)E.push(mk(k,'ot',d));
+  persist();render();
+}
+$('dyw').onclick=()=>setT(dsel,'work');
+$('dyf').onclick=()=>setT(dsel,'off');
+$('dyc').onclick=()=>{E=E.filter(e=>!(e.date===dsel&&['work','off','ot'].includes(e.type)));persist();render()};
+$('dym').onclick=()=>addOt(dsel,-.5);
+$('dyp').onclick=()=>addOt(dsel,.5);
+$('dyx').onclick=()=>$('dy').classList.remove('a');
+$('dy').onclick=e=>{if(e.target===$('dy'))$('dy').classList.remove('a')};
+
+/* ---------- الملف الشخصي ---------- */
+const PK=KEY+'_p';
+const defP={name:'ياسر الحسين',job:'',work:'',phone:'',email:'',city:'',cur:'$',dw:0,otr:0,we:[5,6],pic:''};
+let P={...defP};
+try{P={...defP,...JSON.parse(localStorage.getItem(PK)||'{}')}}catch(e){}
+function saveP(){try{localStorage.setItem(PK,JSON.stringify(P))}catch(e){}schedPush()}
+
+function avat(el){
+  el.innerHTML='';
+  if(P.pic){const i=document.createElement('img');i.src=P.pic;el.append(i)}
+  else el.textContent=(P.name||'').trim()[0]||'👤';
+}
+
+[['prn','name'],['prj','job'],['prw','work'],['prph','phone'],['prem','email'],['prc','city'],['prcu','cur']].forEach(([i,k])=>{
+  $(i).value=P[k]||'';
+  $(i).oninput=()=>{P[k]=$(i).value;saveP();avat($('prav'));render()};
+});
+[['prdw','dw'],['prot','otr']].forEach(([i,k])=>{
+  $(i).value=P[k]||'';
+  $(i).oninput=()=>{P[k]=parseFloat($(i).value)||0;saveP();render()};
+});
+
+WSN.forEach((w,i)=>{
+  const b=document.createElement('button');b.textContent=w;
+  b.onclick=()=>{
+    const s=new Set(P.we);
+    s.has(i)?s.delete(i):s.add(i);
+    P.we=[...s];saveP();renderCal();
+  };
+  $('prwe').append(b);
+  if(P.we.includes(i))b.classList.add('a');
+});
+
+$('prpb').onclick=()=>$('prpic').click();
+$('prpx').onclick=()=>{P.pic='';saveP();avat($('prav'))};
+$('prpic').onchange=ev=>{
+  const f=ev.target.files[0];ev.target.value='';
+  if(!f)return;
+  const r=new FileReader();
+  r.onload=()=>{
+    const im=new Image();
+    im.onload=()=>{
+      const c=document.createElement('canvas'),s=Math.min(im.width,im.height),S=180;
+      c.width=c.height=S;
+      c.getContext('2d').drawImage(im,(im.width-s)/2,(im.height-s)/2,s,s,0,0,S,S);
+      P.pic=c.toDataURL('image/jpeg',.75);
+      saveP();avat($('prav'));
+    };
+    im.src=r.result;
+  };
+  r.readAsDataURL(f);
+};
+avat($('prav'));
+
+/* ---------- مدير العمل ---------- */
+const MG=KEY+'_mg';
+let M={name:'',wa:'',em:''};
+try{M={...M,...JSON.parse(localStorage.getItem(MG)||'{}')}}catch(e){}
+['mgname','mgwa','mgem'].forEach((i,k)=>{
+  const key=['name','wa','em'][k];
+  $(i).value=M[key]||'';
+  $(i).oninput=()=>{M[key]=$(i).value;try{localStorage.setItem(MG,JSON.stringify(M))}catch(e){}};
+});
+
+function buildReport(){
+  const[f,t,lab]=range();
+  const L=E.filter(e=>e.date>=f&&e.date<=t);
+  const s=t=>L.filter(e=>e.type===t).reduce((a,e)=>a+e.amount,0);
+  const d=L.filter(e=>e.type==='work').length;
+  const due=d*P.dw;
+  const bal=due-s('pay')-s('adv')+s('bonus')-s('deduct');
+  return `📊 تقرير ${lab}
+👤 العامل: ${P.name||'—'}
+📅 ${f} → ${t}
+
+✅ أيام العمل: ${d}
+🛏️ العطل: ${L.filter(e=>e.type==='off').length}
+💵 الدفعات: ${s('pay')} ${P.cur} (${L.filter(e=>e.type==='pay').length})
+🎁 المكافآت: ${s('bonus')} ${P.cur}
+⚠️ الخصومات: ${s('deduct')} ${P.cur}
+💸 السلف: ${s('adv')} ${P.cur}
+
+💰 المستحق: ${due} ${P.cur}
+🏦 الباقي للعامل: ${bal} ${P.cur}
+
+— مفكرتي اليومية | ياسر الحسين`;
+}
+
+function sendWA(num,msg){
+  if(!num){toast('أدخل رقم واتساب أولاً',null);return}
+  num=num.replace(/\D/g,'');
+  const url='https://wa.me/'+num+'?text='+encodeURIComponent(msg);
+  window.open(url,'_blank');
+}
+$('mgsave').onclick=()=>{try{localStorage.setItem(MG,JSON.stringify(M))}catch(e){}toast('حُفظت بيانات المدير ✅',null)};
+$('mgrep').onclick=()=>{if(!M.wa){toast('أدخل رقم واتساب المدير',null);return}sendWA(M.wa,buildReport())};
+$('mgmail').onclick=()=>{
+  if(!M.em){toast('أدخل بريد المدير',null);return}
+  const subj='تقرير مفكرتي اليومية';
+  window.location.href='mailto:'+M.em+'?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(buildReport());
+};
+
+// إضافة مكافأة/خصم/ساعة إضافية لعامل
+$('wkadd').onclick=()=>{
+  const name=$('wkname').value.trim();
+  const type=$('wktype').value;
+  const amt=parseFloat($('wkamt').value)||0;
+  const note=$('wknote').value.trim();
+  if(!name||!amt){toast('أدخل الاسم والمبلغ',null);return}
+  // تُسجَّل باسم العامل في اليوم الحالي
+  const date=iso(new Date());
+  E.push({id:Date.now()+Math.random(),date,type,amount:amt,cur:P.cur,who:name,place:'',note:note||lbl({type,amount:amt}),ts:Date.now()});
+  persist();render();
+  toast('حُفظت الحركة للعامل: '+name,null);
+  $('wkname').value='';$('wkamt').value='';$('wknote').value='';
+};
+
+function renderWorkerList(){
+  const L=E.filter(e=>e.who&&['bonus','deduct','ot','dli','dme'].includes(e.type));
+  $('wklist').innerHTML=L.length?'<h3>سجلات العمال</h3>':'';
+  L.slice(-30).reverse().forEach(e=>$('wklist').append(row(e,true)));
+}
+
+/* ---------- الحفظ السحابي ---------- */
+const SNP=KEY+'_snaps',LST=KEY+'_last',DAY=864e5;
+let snaps=[];try{snaps=JSON.parse(localStorage.getItem(SNP)||'[]')}catch(e){}
+function payload(){return JSON.stringify({app:'mufakkirati',v:2,date:new Date().toISOString(),entries:E,profile:P},null,2)}
+function snap(){if(!E.length)return;snaps.unshift({ts:Date.now(),entries:[...E]});snaps=snaps.slice(0,10);try{localStorage.setItem(SNP,JSON.stringify(snaps))}catch(e){}}
+snap();
+
+function fdt(ts){return new Date(ts).toLocaleDateString('ar',{weekday:'long',day:'numeric',month:'long',hour:'numeric',minute:'2-digit'})}
+const fname=()=>'mufakkirati-'+iso(new Date())+'.json';
+function exported(){try{localStorage.setItem(LST,String(Date.now()))}catch(e){}render()}
+
+function renderBk(){
+  const l=+localStorage.getItem(LST)||0;
+  $('lb').textContent=l?'آخر نسخة: '+fdt(l):'لم تُحفظ نسخة خارجية بعد';
+  $('bn').style.display=(E.length&&Date.now()-l>7*DAY)?'block':'none';
+  $('bn').onclick=()=>goto('p8');
+  $('sn').innerHTML=snaps.length?'':'<div class="empty">لا توجد نسخ بعد.</div>';
+  snaps.forEach((s,i)=>{
+    const d=document.createElement('div');d.className='it';
+    const ic=document.createElement('span');ic.className='ic';ic.textContent='🕰️';
+    const m=document.createElement('div');m.className='m';
+    m.innerHTML='<div>'+fdt(s.ts)+'</div><div class="d">'+s.entries.length+' حركة</div>';
+    const r=document.createElement('button');r.className='rs';r.textContent='استعادة';
+    r.onclick=()=>{if(confirm('استعادة هذه النسخة؟')){E=s.entries;persist();render();toast('استُعيدت النسخة ✅',null)}};
+    d.append(ic,m,r);$('sn').append(d);
+  });
+}
+
+/* ---------- المشاركة والتصدير ---------- */
+async function shareBk(){
+  const data=payload();
+  try{
+    const f=new File([data],fname(),{type:'application/json'});
+    if(navigator.canShare&&navigator.canShare({files:[f]})){
+      await navigator.share({files:[f],title:'نسخة مفكرتي'});
+      exported();return;
+    }
+    if(navigator.share){await navigator.share({title:'نسخة مفكرتي',text:data});exported();return}
+  }catch(e){if(e&&e.name==='AbortError')return}
+  try{await navigator.clipboard.writeText(data);toast('نُسخ الملف للحافظة',null);exported()}catch(e){toast('تعذر النسخ',null)}
+}
+async function saveFile(){
+  const data=payload(),name=fname();
+  if(window.showSaveFilePicker){
+    try{
+      const h=await window.showSaveFilePicker({suggestedName:name,types:[{description:'JSON',accept:{'application/json':['.json']}}]});
+      const w=await h.createWritable();
+      await w.write(data);await w.close();
+      exported();toast('حُفظ الملف ✅',null);return;
+    }catch(e){if(e&&e.name==='AbortError')return}
+  }
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(new Blob([data],{type:'application/json'}));
+  a.download=name;document.body.append(a);a.click();a.remove();
+  exported();
+}
+function saveDrive(){
+  // درايف: نفتح رابط درايف للرفع مع تنزيل محلي
+  const data=payload(),name=fname();
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(new Blob([data],{type:'application/json'}));
+  a.download=name;document.body.append(a);a.click();a.remove();
+  setTimeout(()=>window.open('https://drive.google.com/drive/my-drive','_blank'),600);
+  exported();
+  toast('حُفظ الملف، ارفعه إلى درايف المفتوح',null);
+}
+
+$('bsh').onclick=shareBk;
+$('bsf').onclick=saveFile;
+$('bgd').onclick=saveDrive;
+$('brs').onclick=()=>$('fi').click();
+$('fi').onchange=async ev=>{
+  const f=ev.target.files[0];ev.target.value='';if(!f)return;
+  try{
+    const j=JSON.parse(await f.text());
+    if(j.app!=='mufakkirati'||!Array.isArray(j.entries))throw 0;
+    snap();
+    const ids=new Set(E.map(e=>e.id));
+    let n=0;
+    j.entries.forEach(e=>{if(e&&e.date&&e.type&&!ids.has(e.id)){E.push(e);n++}});
+    persist();render();
+    toast('استُعيدت '+n+' حركة ✅',null);
+  }catch(e){alert('الملف غير صالح')}
+};
+
+$('bexp-csv').onclick=()=>{
+  let csv='التاريخ,النوع,المبلغ,الملاحظة\n';
+  [...E].sort((a,b)=>a.date.localeCompare(b.date)).forEach(e=>{
+    csv+=`${e.date},${e.type},${e.amount||0},"${(lbl(e)||'').replace(/"/g,'""')}"\n`;
+  });
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(new Blob(['\ufeff'+csv],{type:'text/csv;charset=utf-8'}));
+  a.download='mufakkirati-'+iso(new Date())+'.csv';
+  document.body.append(a);a.click();a.remove();
+  exported();
+};
+
+$('bexp-pdf').onclick=()=>{
+  // نستخدم طباعة المتصفح لـ PDF (لا مكتبات خارجية)
+  const[f,t,lab]=range();
+  const L=E.filter(e=>e.date>=f&&e.date<=t).sort((a,b)=>a.date.localeCompare(b.date));
+  const s=t=>L.filter(e=>e.type===t).reduce((a,e)=>a+e.amount,0);
+  const d=L.filter(e=>e.type==='work').length;
+  const due=d*P.dw;
+  const bal=due-s('pay')-s('adv')+s('bonus')-s('deduct');
+  const html=`<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><title>كشف حساب</title>
+<style>body{font-family:'Amiri',serif;padding:24px}h1{color:#1e8449;text-align:center;margin:0 0 6px}
+.meta{text-align:center;color:#666;margin-bottom:20px}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14px}
+th,td{border:1px solid #ccc;padding:8px;text-align:right}
+th{background:#e8f5e9}.tot{background:#f9f4ec;font-weight:700}
+.foot{text-align:center;margin-top:24px;color:#888;font-size:13px}
+</style></head><body>
+<h1>كشف حساب</h1>
+<div class="meta">${lab}<br>${P.name||'—'}${P.job?' — '+P.job:''}</div>
+<table>
+<tr><th>البند</th><th>القيمة</th></tr>
+<tr><td>أيام العمل</td><td>${d}</td></tr>
+<tr><td>الساعات الإضافية</td><td>${L.filter(e=>e.type==='ot').reduce((a,e)=>a+e.amount,0)}</td></tr>
+<tr><td>المستحق</td><td>${due} ${P.cur}</td></tr>
+<tr><td>الدفعات</td><td>${s('pay')} ${P.cur}</td></tr>
+<tr><td>السلف</td><td>${s('adv')} ${P.cur}</td></tr>
+<tr><td>المكافآت</td><td>${s('bonus')} ${P.cur}</td></tr>
+<tr><td>الخصومات</td><td>${s('deduct')} ${P.cur}</td></tr>
+<tr class="tot"><td>الرصيد النهائي</td><td>${bal} ${P.cur}</td></tr>
+</table>
+<table><tr><th>التاريخ</th><th>الحركة</th><th>المبلغ</th></tr>
+${L.map(e=>`<tr><td>${e.date}</td><td>${lbl(e)}</td><td>${e.amount||''}</td></tr>`).join('')}
+</table>
+<div class="foot">مفكرتي اليومية — ياسر الحسين<br>kalimat2026go@gmail.com</div>
+</body></html>`;
+  const w=window.open('','_blank');
+  w.document.write(html);w.document.close();
+  setTimeout(()=>w.print(),400);
+  exported();
+};
+
+$('bcopy').onclick=async()=>{
+  const[f,t,lab]=range();
+  const L=E.filter(e=>e.date>=f&&e.date<=t);
+  const txt=lab+'\n'+L.map(e=>e.date+' — '+lbl(e)).join('\n');
+  try{await navigator.clipboard.writeText(txt);toast('نُسخ النص ✅',null)}catch(e){toast('تعذر النسخ',null)}
+};
+
+/* ---------- واتساب ---------- */
+$('wasend').onclick=()=>{
+  const num=$('wanum').value.trim();
+  const msg=$('wamsg').value.trim();
+  if(!num){toast('أدخل الرقم',null);return}
+  sendWA(num,msg);
+};
+$('wapay').onclick=()=>{
+  if(!M.wa){toast('أدخل رقم المدير أولاً',null);return}
+  const bal=(E.filter(e=>e.type==='work').length*P.dw)
+    -E.filter(e=>e.type==='pay').reduce((a,e)=>a+e.amount,0)
+    -E.filter(e=>e.type==='adv').reduce((a,e)=>a+e.amount,0)
+    +E.filter(e=>e.type==='bonus').reduce((a,e)=>a+e.amount,0)
+    -E.filter(e=>e.type==='deduct').reduce((a,e)=>a+e.amount,0);
+  sendWA(M.wa,`مرحباً ${M.name||'أستاذ'}،\nأرجو تحويل مستحقاتي.\nالرصيد الحالي: ${bal} ${P.cur}\n— ${P.name||''}`);
+};
+$('warep').onclick=()=>{
+  if(!M.wa){toast('أدخل رقم المدير',null);return}
+  sendWA(M.wa,buildReport());
+};
+
+/* ---------- السحابة (Firebase) ---------- */
+let fbU=null,fbDb=null,fbOk=false,dirty=false,syncT=null;
+function schedPush(){if(fbU){clearTimeout(syncT);syncT=setTimeout(push,2500)}}
+function renderCloud(){
+  const cfg=!!(window.FB_CONFIG&&window.FB_CONFIG.apiKey);
+  $('cln').style.display=cfg?'none':'block';
+  $('clf').style.display=(cfg&&fbOk&&!fbU)?'block':'none';
+  $('clo').style.display=(cfg&&fbU)?'block':'none';
+  let s=!cfg?'السحابة غير مفعّلة — التطبيق يعمل محلياً':(!fbOk?'⏳ جارٍ تحميل Firebase...':(fbU?'✅ متصل بالسحابة':'غير مسجّل الدخول'));
+  $('clst').textContent=s;
+  if(fbU){let t=0;try{t=+localStorage.getItem(KEY+'_cl')||0}catch(e){}
+    $('clme').textContent=fbU.email+(t?' — آخر حفظ: '+fdt(t):'')}
+}
+async function push(){
+  if(!fbU||!fbDb)return;
+  if(!navigator.onLine){dirty=true;renderCloud();return}
+  try{
+    await fbDb.collection('users').doc(fbU.uid).set({data:payload(),updated:Date.now(),email:fbU.email});
+    try{localStorage.setItem(KEY+'_cl',String(Date.now()))}catch(e){}
+    dirty=false;renderCloud();
+  }catch(e){dirty=true;toast('تعذر الحفظ في السحابة',null)}
+}
+async function pullMerge(auto){
+  if(!fbU||!fbDb)return;
+  try{
+    const d=await fbDb.collection('users').doc(fbU.uid).get();
+    let n=0;
+    if(d.exists){
+      const j=JSON.parse(d.data().data);
+      const ids=new Set(E.map(e=>e.id));
+      (j.entries||[]).forEach(e=>{if(e&&e.date&&e.type&&!ids.has(e.id)){E.push(e);n++}});
+      if(j.profile){Object.keys(defP).forEach(k=>{if(k!=='we'&&!P[k]&&j.profile[k])P[k]=j.profile[k]})}
+      persist();render();
+    }
+    await push();
+    toast(n?'جُلب '+n+' حركة من السحابة ✅':(auto?'تمت المزامنة ✅':'لا جديد'),null);
+  }catch(e){toast('تعذر الاتصال بالسحابة',null)}
+}
+const AE={'auth/invalid-email':'بريد غير صحيح','auth/weak-password':'كلمة المرور ضعيفة (6 أحرف على الأقل)','auth/email-already-in-use':'البريد مسجّل مسبقاً','auth/wrong-password':'كلمة المرور خاطئة','auth/invalid-credential':'بيانات الدخول خاطئة','auth/user-not-found':'لا يوجد حساب بهذا البريد','auth/network-request-failed':'لا يوجد إنترنت'};
+const em=()=>$('clem').value.trim(),pw=()=>$('clpw').value;
+async function au(f){
+  if(!em()||!pw()){toast('أدخل البريد وكلمة المرور',null);return}
+  try{await f();$('clpw').value=''}
+  catch(e){toast(AE[e.code]||'تعذر تنفيذ العملية',null)}
+}
+$('clin').onclick=()=>au(()=>firebase.auth().signInWithEmailAndPassword(em(),pw()));
+$('clup').onclick=()=>au(()=>firebase.auth().createUserWithEmailAndPassword(em(),pw()));
+$('clrs').onclick=async()=>{
+  if(!em()){toast('أدخل بريدك',null);return}
+  try{await firebase.auth().sendPasswordResetEmail(em());toast('أُرسل رابط الاستعادة',null)}catch(e){toast('تعذر الإرسال',null)}
+};
+$('clout').onclick=()=>firebase.auth().signOut();
+$('clsv').onclick=async()=>{await push();toast(dirty?'تعذر الحفظ':'حُفظ في السحابة ✅',null)};
+$('clpl').onclick=()=>pullMerge(false);
+addEventListener('online',()=>{if(dirty)push()});
+
+function cloudInit(){
+  const c=window.FB_CONFIG;
+  if(!c||!c.apiKey){renderCloud();return}
+  const ld=s=>new Promise((a,b)=>{const e=document.createElement('script');e.src=s;e.onload=a;e.onerror=b;document.head.append(e)});
+  const B='https://www.gstatic.com/firebasejs/10.12.2/';
+  ld(B+'firebase-app-compat.js').then(()=>Promise.all([
+    ld(B+'firebase-auth-compat.js'),
+    ld(B+'firebase-firestore-compat.js')
+  ])).then(()=>{
+    firebase.initializeApp(c);fbDb=firebase.firestore();fbOk=true;
+    firebase.auth().onAuthStateChanged(u=>{fbU=u;renderCloud();if(u)pullMerge(true)});
+  }).catch(()=>{renderCloud()});
+}
+
+/* ---------- شبكة ---------- */
+function net(){
+  const o=navigator.onLine;
+  $('st').classList.toggle('off',!o);
+  $('stt').textContent=o?'متصل':'غير متصل (يعمل محلياً)';
+}
+addEventListener('online',net);addEventListener('offline',net);net();
+
+/* ---------- التثبيت PWA ---------- */
+let dp=null;
+const installBtn=$('installBtn');
+addEventListener('beforeinstallprompt',e=>{
+  e.preventDefault();dp=e;
+  installBtn.classList.add('show');
+  installBtn.textContent='📲 تثبيت التطبيق على الهاتف';
+  installBtn.onclick=async()=>{
+    if(!dp)return;
+    dp.prompt();
+    try{await dp.userChoice}catch(e){}
+    dp=null;installBtn.classList.remove('show');
+  };
+});
+addEventListener('appinstalled',()=>installBtn.classList.remove('show'));
+
+const isIOS=/iphone|ipad|ipod/i.test(navigator.userAgent);
+const sa=matchMedia('(display-mode: standalone)').matches||navigator.standalone;
+if(isIOS&&!sa){
+  installBtn.classList.add('show');
+  installBtn.textContent='📲 كيف أثبّت على الآيفون؟';
+  installBtn.onclick=()=>{
+    alert('خطوات التثبيت على iPhone:\n\n1. افتح الرابط في Safari\n2. اضغط زر المشاركة ⬆️ أسفل الشاشة\n3. اختر "إضافة إلى الشاشة الرئيسية"\n4. اضغط "إضافة"');
+  };
+}
+
+/* ---------- Service Worker ---------- */
+if('serviceWorker' in navigator){
+  addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
+}
+if(navigator.storage&&navigator.storage.persist)navigator.storage.persist().catch(()=>{});
+
+/* ---------- تشغيل ---------- */
+cloudInit();
+render();
+</script>
+</body>
+  </html>
